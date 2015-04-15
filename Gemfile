@@ -12,6 +12,8 @@ gem 'dalli'
 gem 'delayed_job_active_record'
 
 #ASSETS
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
