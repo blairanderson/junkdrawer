@@ -5,8 +5,11 @@ class ApiSlugController < ApplicationController
   end
 
   def show
-    @url = params[:endpoint] || "http://api.github.com/users/blairanderson/repos"
-    render json APICache.get(params[:endpoint])
+    if params[:endpoint].present?
+      render json: ApiCache.get(params[:endpoint])
+    else
+      render json: ApiCache.get('https://api.github.com/users/blairanderson/repos')
+    end
   end
 
   def secure

@@ -23,6 +23,7 @@ gem 'bootstrap-sass-extras'
 gem 'bundler'
 
 #LIBS
+gem 'faraday'
 gem 'simple_form'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
@@ -59,4 +60,4 @@ end
 
 
 # API_SLUG
-gem 'api_cache'
+# gem 'api_cache'

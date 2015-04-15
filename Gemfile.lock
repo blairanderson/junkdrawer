@@ -47,7 +47,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    api_cache (0.3.0)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (5.1.9)
       execjs
@@ -517,7 +516,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  api_cache
   better_errors
   binding_of_caller
   bootstrap-sass!
@@ -530,6 +528,7 @@ DEPENDENCIES
   devise!
   dotenv-rails
   factory_girl_rails
+  faraday
   jquery-rails
   jquery-ui-rails
   omniauth

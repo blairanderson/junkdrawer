@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150415055519) do
   create_table "api_caches", force: true do |t|
     t.integer  "user_id"
     t.string   "endpoint"
+    t.hstore   "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
