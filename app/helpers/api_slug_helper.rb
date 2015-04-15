@@ -1,0 +1,2 @@
+module ApiSlugHelper
+end
