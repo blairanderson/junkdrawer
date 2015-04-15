@@ -29,6 +29,7 @@ class UserSettingsController < ApplicationController
   # POST /user_settings.json
   def create
     @user_setting = UserSetting.new(user_setting_params)
+    @user_setting.user = current_user
 
     respond_to do |format|
       if @user_setting.save
