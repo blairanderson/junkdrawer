@@ -59,5 +59,4 @@ end
 
 
 # API_SLUG
-
 gem 'api_cache'

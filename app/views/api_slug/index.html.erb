@@ -1,8 +1,14 @@
-class ApiSlugController < ApplicationController
+<h1>ApiSlug</h1>
 
-  def index
 
-  end
+<h3>How to?</h3>
+
+<hr/>
+get <code>junkdrawer.com/api_slug/name?endpoint=http://api.github.com/users/blairanderson/repos</code>
+<hr/>
+
+<code highlight="ruby">
+<textarea name="" id="" cols="30" rows="10">
 
   def show
     @url = params[:endpoint] || "http://api.github.com/users/blairanderson/repos"
@@ -31,5 +37,6 @@ class ApiSlugController < ApplicationController
       end
     end
   end
-end
 
+</textarea>
+</code>
