@@ -8,6 +8,9 @@ gem 'rails', '4.1.4'
 gem 'pg'
 gem 'dalli'
 
+#MIDDLEWARE
+gem 'rack-cors', :require => 'rack/cors'
+
 #WORKERS
 gem 'delayed_job_active_record'
 
