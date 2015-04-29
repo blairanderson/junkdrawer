@@ -32,13 +32,13 @@
       <h2>Get Started?</h2>
       <hr/>
       get
-      <code>http://junkdrawer.herokuapp.com/api_slug/name?endpoint=https://api.github.com/users/blairanderson/repos</code>
+      <code>http://junkdrawer.herokuapp.com/api_slug/blairanderson-repos?endpoint=https://api.github.com/users/blairanderson/repos</code>
       <hr/>
 
       <p>
         You should see my data, instead of hitting github, and killing the api, how about you utilize this cache that
         expires
-        every <%= ApiCache.expires_in %> hours?
+        every <%= ApiCache::EXPIRES_IN %> hours?
       </p>
 
       <p>
