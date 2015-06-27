@@ -1,6 +1,6 @@
 class ApiCache < ActiveRecord::Base
 
-  EXPIRES_IN = 2.hours
+  EXPIRES_IN = 24.hours
 
   belongs_to :user
   validates_formatting_of :endpoint, using: :url

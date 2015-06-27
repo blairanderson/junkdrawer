@@ -5,7 +5,11 @@ class ApiSlugController < ApplicationController
 
   def show
     if params[:endpoint].present?
-      render json: ApiCache.get(params[:endpoint])
+      url = params.delete(:endpoint)
+
+      endpoint_params = params.except(:action, :controller, :id, :endpoint)
+
+      render json: ApiCache.get("#{url}?#{endpoint_params.to_param}")
     else
       render json: ApiCache.get('https://api.github.com/users/blairanderson/repos')
     end
