@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
       headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
       headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
       headers['Access-Control-Max-Age'] = '1728000'
-
       render :text => '', :content_type => 'text/plain'
     else
       headers['Access-Control-Allow-Origin'] = '*'
@@ -30,9 +29,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
 
-
   private
-  
+
   def require_user_signed_in
     unless user_signed_in?
 
@@ -48,6 +46,18 @@ class ApplicationController < ActionController::Base
 
       redirect_to fallback_redirect, flash: {error: "You must be signed in to view this page."}
     end
+  end
+
+  def terms
+    "By using this API, you agree to have your data sold to the highest bidder, the FBI, the CIA, and the data is cached for 24hours.".freeze
+  end
+
+  def success_api_response(data={})
+    render json: {terms: terms, root: root_path}.merge(data), status: 200
+  end
+
+  def error_api_response(message='', code=422)
+    render json: {message: message}, status: code
   end
 
 end

@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h1>ApiSlug</h1>
-        </div>
-        <div class="panel-body">
-          <%= link_to "ApiSlug", api_slug_index_path %>
+
+    <% @apps.each do |app| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1><%= link_to app[:title], app[:link_to]  %></h1>
+          </div>
+          <div class="panel-body">
+            <%= app[:description] %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"></div>
+    <% end %>
+
   </div>
 </div>

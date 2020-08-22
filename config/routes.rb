@@ -36,5 +36,10 @@ Rails.application.routes.draw do
   end
   resources :api_slug
   # END API_SLUG
+  resources :converters, only: [:index] do
+    collection do
+      post :xml
+    end
+  end
 
 end
